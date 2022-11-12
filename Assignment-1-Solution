@@ -1,29 +1,64 @@
 ## Assignment Part-1
 Q1. Why do we call Python as a general purpose and high-level programming language?
 
+Python is considered general purpose as it can be used for developing a variety of applications like desktop GUI applications, websites and web applications and is
+not specialized for a particular problem. 
+Python is a high-level programming language because it’s highly readable by humans.
+
 Q2. Why is Python called a dynamically typed language?
+
+Because we don't have to declare variable type when defining them.
 
 Q3. List some pros and cons of Python programming language?
 
+Pros - Simple, Readable, Object-oriented, Free and open source, Portable, Extensible and many more.
+Cons - Large Memory consumption, Speed limitation, Not suitable for mobile based applications, Design Restrictions etc.
+
 Q4. In what all domains can we use Python?
+
+Web Development, Machine Learning, Data Engineering, Scientific Calculations, etc.
 
 Q5. What are variable and how can we declare them?
 
+Variables in Python Variables are the names that store the values. We can declare them by assigning a value to them
+Example a=5 or first_name = "User"
+
 Q6. How can we take an input from the user in Python?
+
+By using input() method. Example inp = input('Please enter you name')
 
 Q7. What is the default datatype of the value that has been taken as an input using input() function?
 
+Default data type is string
+
 Q8. What is type casting?
+
+Converting the data type of an object to another is called type casting
 
 Q9. Can we take more than one input from the user using single input() function? If yes, how? If no, why?
 
+Yes, we can take multiple inputs in input function. Example below:
+
+a,b=input("Enter the 2 values = ").split()
+print("1st value = ",a)
+print("2nd value = ",b)
+
 Q10. What are keywords?
+
+Keywords are reserved words. These words hold some special meaning, can be commands, or a parameter etc. We cannot use keywords as variable names.
 
 Q11. Can we use keywords as a variable? Support your answer with reason.
 
+No we cannot use keywords as variables, Python compiler does not interpret them as variables.
+
 Q12. What is indentation? What's the use of indentaion in Python?
 
+Indentation in Python means space in the beginning of lines of the code. Python uses it to indicatee a block of code. For example it is used in if-else,
+for loops and while loops.
+
 Q13. How can we throw some output in Python?
+
+We can use the print() function to throw output to the screen.
 
 Q14. What are operators in Python?
 
