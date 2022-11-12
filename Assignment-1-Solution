@@ -62,41 +62,94 @@ We can use the print() function to throw output to the screen.
 
 Q14. What are operators in Python?
 
+Operators in Python are used to perform certain operations on variables and values. Few operators are below
+ 
+Arithmetic operator 
+Assignment operator
+Comparison operator
+Logical operator
+Boolean operator
+
 Q15. What is difference between / and // operators?
+
+/ - Divisionn Operator Example 12/2 = 6
+// - Floor Division Operator 13/2 = 6
 
 Q16. Write a code that gives following as an output.
 ```
 iNeuroniNeuroniNeuroniNeuron
 ```
+s="iNeuron"
+print(s*4)
 
 Q17. Write a code to take a number as an input from the user and check if the number is odd or even.
 
+num=input("Enter the number ")
+num = int(num)
+if num%2 == 0:
+    print("The number is Even")
+else:
+    print("The number is Odd")
+    
 Q18. What are boolean operator?
+
+Booleans represent one of two values: True or False.
 
 Q19. What will the output of the following?
 ```
-1 or 0
+1 or 0 --> 1
 
-0 and 0
+0 and 0 --> 0
 
-True and False and True
+True and False and True --> False
 
-1 or 0 or 0
+1 or 0 or 0 --> 1
 ```
 
 Q20. What are conditional statements in Python?
 
+They regulate the flow of execution of code based on the defined conditions.
+
 Q21. What is use of 'if', 'elif' and 'else' keywords?
 
+Used for 
+
+if condition:
+  # code
+elif condtion:
+  # code
+else:
+  # code
+
 Q22. Write a code to take the age of person as an input and if age >= 18 display "I can vote". If age is < 18 display "I can't vote".
+
+age=input("Please enter your age")
+age = int(age)
+if age >= 18:
+    print("I can vote")
+else:
+    print("I can't vote")
 
 Q23. Write a code that displays the sum of all the even numbers from the given list.
 ```
 numbers = [12, 75, 150, 180, 145, 525, 50]
 ```
-
+numbers = [12, 75, 150, 180, 145, 525, 50]
+sum = 0
+for i in numbers:
+    if i%2 == 0:
+        sum = sum + i
+print("Sum of even numbers = ",sum)
 
 Q24. Write a code to take 3 numbers as an input from the user and display the greatest no as output.
+
+a,b,c=input("Enter 3 number").split()
+if a > b and a > c:
+    print("The largest number is =",a)
+elif b > a and b > c:
+    print("The largest number is =",b)
+else:
+    print("The largest number is =",c)
 
 Q25. Write a program to display only those numbers from a list that satisfy the following conditions
 
@@ -108,3 +161,9 @@ Q25. Write a program to display only those numbers from a list that satisfy the 
 ```
 numbers = [12, 75, 150, 180, 145, 525, 50]
 ```
+numbers = [12, 75, 150, 180, 145, 525, 50]
+for num in numbers:
+    if num%5 == 0 and num <= 150:
+        print("Number is = ", num)
+    if num > 500:
+        break
