@@ -413,36 +413,139 @@ Prints out all the values in a dictionary.
 
 Q68. What are loops in Python?
 
+Loops are used to execute a piece of code multiple times or based on a condition.
+
 Q69. How many type of loop are there in Python?
+
+While Loops, For Loops
 
 Q70. What is the difference between for and while loops?
 
+While loop is used to execute a block of statements repeatedly until a given condition is satisfied. Here number of iterations is not known.
+For loop is used for sequential traversal. The number of iterations is known.
+
 Q71. What is the use of continue statement?
+
+Continue is also a loop control statement just like the break statement. 
+It forces to execute the next iteration of the loop.
 
 Q72. What is the use of break statement?
 
+The break statement is used to terminate the loop or statement in which it is present.
+After that, the control passes to the statements that are present after the break statement, if available.
+
 Q73. What is the use of pass statement?
+
+The pass statement in Python is used when a statement is required but you do not want any command or code to execute.
 
 Q74. What is the use of range() function?
 
+range() function is used to get a range of numbers within a given range. Can be used within loops.
+
 Q75. How can you loop over a dictionary?
+
+We can loop over a dictionary as below using item() function
+dict2 ={'a':'1','b':'2','c':'3'}
+for k,v in dict2.items(): # item() built in function for dictionaries for iterating
+    print(k,v)
 
 Coding problems
 Q76. Write a Python program to find the factorial of a given number.
 
+num=int(input("Input a number"))
+p=1
+for i in range(1,num+1):
+    p = p*i
+print("Factorial is = ",p)
+
 Q77. Write a Python program to calculate the simple interest. Formula to calculate simple interest is SI = (PRT)/100
+
+prin=int(input("Input the Principal"))
+rate=int(input("Input the Rate of Interest"))
+time=int(input("Input the Time Period"))
+si=(prin*rate*time)/100
+print("Simple Interest is = ",si)
 
 Q78. Write a Python program to calculate the compound interest. Formula of compound interest is A = P(1+ R/100)^t.
 
+prin=int(input("Input the Principal"))
+rate=int(input("Input the Rate of Interest"))
+time=int(input("Input the Time Period"))
+amt=prin*((1 + rate/100))**time
+print("Compund Interest is = ",amt)
+
 Q79. Write a Python program to check if a number is prime or not.
+
+num=int(input("Input a Number"))
+sum = 0
+for i in range(2,num):
+   if num%i == 0:
+    print("Number is not prime")
+    break
+   else:
+    sum = sum + 1
+if sum == num-2:
+    print("Number is prime")
 
 Q80. Write a Python program to check Armstrong Number.
 
+num=input("Input a Number")
+digits=len(num)
+num_int = int(num)
+sum = 0
+for i in range(0,digits):
+    sum = sum + (int(num[i]) ** digits)
+if sum == num_int:
+    print("Number ",num," is an Armstrong number")
+else:
+    print("Number ",num," is not an Armstrong number")
+
 Q81. Write a Python program to find the n-th Fibonacci Number.
+
+def fibbonaci(n):
+    if n == 0:
+        return "Incorrect choice"
+    elif n == 1:
+        return 0
+    elif n == 2:
+        return 1
+    else:
+        sum = 0
+        f = 0
+        s = 1
+        for i in range(1,n-1):
+            sum = f + s
+            f = s
+            s = sum
+        return sum  
+
+n = int(input("Enter the limit"))
+print(fibbonaci(n))
 
 Q82. Write a Python program to interchange the first and last element in a list.
 
+list1 = input("Enter the values in the List").split()
+l1_len = len(list1)
+x = list1[0]
+list1[0] = list1[l1_len -1]
+list1[l1_len -1] = x
+print("List is = ",list1)
+
 Q83. Write a Python program to swap two elements in a list.
+
+list1 = input("Enter the values in the List").split()
+l1_len = len(list1)
+
+a=int(input("First to be swapped"))
+b=int(input("Second to be swapped"))
+
+if a >= l1_len or b >=l1_len:
+    print("Index out of bounds")
+else:
+    x = list1[a]
+    list1[a-1] = list1[b-1]
+    list1[b-1] = x
+print("List is = ",list1)
 
 Q84. Write a Python program to find N largest element from a list.
 
