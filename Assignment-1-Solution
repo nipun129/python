@@ -549,15 +549,64 @@ print("List is = ",list1)
 
 Q84. Write a Python program to find N largest element from a list.
 
+list1 = []
+num = int(input("Number of elements in the list"))
+for i in range(1,num+1):
+    e = int(input("Enter the element ",))
+    list1.append(e)
+print("Largest element in the list is = ",max(list1))
+
 Q85. Write a Python program to find cumulative sum of a list.
+
+list1 = []
+list2 = []
+num = int(input("Number of elements in the list"))
+for i in range(1,num+1):
+    e = int(input("Enter the element ",))
+    list1.append(e)
+print(len(list1))
+sum = 0
+for j in range(0,len(list1)):
+    sum = sum + list1[j]
+    list2.append(sum)
+print("Original List =",list1)    
+print("List of Cumulative Sum =",list2)
 
 Q86. Write a Python program to check if a string is palindrome or not.
 
+s=input("Enter the string")
+l=len(s)
+sum = 0
+for i in range(0,l//2):
+    if s[i] == s[l - 1 - i]:
+        sum = sum + 1
+        continue
+    else:
+        print("String is not a Palindrome")
+        break
+if sum == l//2:
+    print("String is Palindrome")
+
 Q87. Write a Python program to remove i'th element from a string.
+
+s=input("Enter the string")
+l=len(s)
+new_str = ""
+i=int(input("Enter the ith element to be removed"))
+for index in range(l):
+    if index != i:
+        new_str = new_str + s[index]
+print(new_str) 
 
 Q88. Write a Python program to check if a substring is present in a given string.
 
+main_str = input("Enter the string")
+sub_str = input("Enter the sub-string")
+print(main_str.__contains__(sub_str))
+
 Q89. Write a Python program to find words which are greater than given length k.
+
+
 
 Q90. Write a Python program to extract unquire dictionary values.
 
