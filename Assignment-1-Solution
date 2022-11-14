@@ -701,11 +701,8 @@ Q96. Write a python program to print below pattern.
 * * * 
 * * * * 
 * * * * * 
-
 for i in range (1,6):
-    for k in range(1,i + 1):
-        print("*", end= ' ')
-    print('\n')
+        print("* "*i)
 
 Q97. Write a python program to print below pattern.
 
@@ -716,7 +713,8 @@ Q97. Write a python program to print below pattern.
 *****
 
 for i in range(5):
-    print(" "*(5-i),"*"*(i+1))
+    print(" "*(5-i),"* "*(i+1))
+    
 Q98. Write a python program to print below pattern.
 
     * 
@@ -725,6 +723,8 @@ Q98. Write a python program to print below pattern.
  * * * * 
 * * * * * 
 
+for i in range(5):
+    print(" "*(5-i)," *"*(i+1))
 
 Q99. Write a python program to print below pattern.
 
@@ -733,6 +733,12 @@ Q99. Write a python program to print below pattern.
 1 2 3 
 1 2 3 4 
 1 2 3 4 5
+
+for i in range (1,6):
+    for k in range(1,i + 1):
+        print(k, end= ' ')
+    print("")
+    
 Q100. Write a python program to print below pattern.
 
 A 
@@ -740,3 +746,10 @@ B B
 C C C 
 D D D D 
 E E E E E 
+
+l1 = ['A','B','C','D','E']
+l=len(l1)
+for i in range(1,l+1):
+    for j in range(1,i+1):
+        print(l1[i-1],end = " ")
+    print("")
