@@ -1,49 +1,237 @@
 Python OOP Assignment
 Q1. What is the purpose of Python's OOP?
 
+ Object-oriented Programming (OOPs) is a programming concept that uses objects and classes in programming. It helps implement real-world principles like 
+ inheritance, polymorphism, encapsulation, etc. in the programming. The main concept of OOPs is to bind the data and the functions that work on that together as 
+ a single unit so that no other part of the code can access this data. It also is much more closer to the real worrld applications and programs which are not sequential
+ in nature.
+ 
 Q2. Where does an inheritance search look for an attribute?
+
+In inheritance a class derives or inherits properties/attributes and methods from its parent class. Hence it searches for attributes in the parent class.
 
 Q3. How do you distinguish between a class object and an instance object?
 
+Class is a blueprint using which an object can be created.
+An instance is an actual entity which is the copy of a class having actual values.
+
+Example. Below is a class
+# Creating a class
+class Employee:
+    def __init__(self, name, salary):
+        # Instance variables or attributes
+        self.emp_name = name
+        self.emp_salary = salary
+    # Methods of the class
+    def displayEmployeeInfo(self):
+        print("Employee Name is : ",self.emp_name," , Employee Salary : ",self.emp_salary)
+
+# Creating an object of the above class
+emp1 = Employee('Shashank', 1000)  # Sepcific object
+emp2 = Employee('Rahul', 2000)  # Specific object
+
+print(emp1.emp_name)
+print(emp1.emp_salary)
+
 Q4. What makes the first argument in a class’s method function special?
+
+The first argument in a class's method is the 'self' attribute. It represents the instance of the class itself. We can access attributes and methods using self.
+Example
+class Employee:
+    # This is known as the constructor of a class and has its own defined way of declaration __init__
+    # It is mainly used for assignement of instance variables
+    def __init__(self, name, salary):
+        # Instance variables or attributes
+        self.emp_name = name
+        self.emp_salary = salary
+    # Method of the class
+    def displayEmployeeInfo(self):
+        print("Employee Name is : ",self.emp_name," , Employee Salary : ",self.emp_salary)
 
 Q5. What is the purpose of the init method?
 
+The __init__() method is the Constructors which is used to initialize the state of the object. It assigns values to the data members of the class when an 
+object of the class is created. It is run as soon as an object of a class is instantiated. 
+
 Q6. What is the process for creating a class instance?
+
+To create a class instance we use the class keyword as in the example below.
+
+# We create a class named Student and create an instance of this class, NewStudent.
+class Student:
+  def __init__(self, name, subject):
+        # Instance variables or attributes
+        self.emp_name = name
+        self.emp_salary = subject
+
+NewStudent= Student('John','Mathematics')
 
 Q7. What is the process for creating a class?
 
+We can create a class using th class statement followed by the name of the class we want to create. This is followed by the constructor and any methods that
+the class may have. Example below:
+
+class Car:
+  def __init()__(self, name, color):
+      self.name = name
+      self.color = color
+  def displayCarInfo(self):
+      print("Car Name ",self.name," and Color is ",self.color)
+      
 Q8. How would you define the superclasses of a class?
+
+To define the super class of a class we need to add its name when creating the child class. Example below where Parent class is called Shape and child class is called
+square
+
+class Shape:
+    def __init__(self, name):
+        self.name = name
+
+    def area(self):
+        pass # Used to mention empty line in Python, used syntactically
+    
+    def fact(self):
+        pass
+    def whichShape(self):
+        print(self.name)
+
+#Mention the name of parent class when defining the child class. 
+class Square(Shape): 
+    def __init__(self, name, length):
+        super().__init__(name)
+        self.side_length = length
+
+    def area(self):
+        print("Area of Square is ", self.side_length ** 2)
+    
+    def fact(self):
+        print("Squares have each angle of 90 degrees")
 
 Q9. What is the relationship between classes and modules?
 
+- Classes in python act as a blueprint based on which objects are created. 
+- Modules in Python are files with a .py extension using which we can reuse elements inside that file. A python program can contain inside it functions, variables, 
+  and even classes. If we want to reuse the same piece of function code or the same class, instead of re-writing the code, we can import that entire file as a
+  module into another program.
+
 Q10. How do you make instances and classes?
+
+
 
 Q11. Where and how should be class attributes created?
 
+Class attributes belong to the class itself and are shared by all instances. Class attributes are defined at the class level ouside of the constructor which contains
+the instance attributes. Example:
+
+class Employee:
+    # Class attribute
+    empCount = 0
+    def __init__(self, name, salary):
+        # Instance variables or attributes
+        self.emp_name = name
+        self.emp_salary = salary
+        Employee.empCount += 1 # In order to manipulate a class attribute
+    # Method of the class
+    def displayEmployeeInfo(self):
+        print("Employee Name is : ",self.emp_name," , Employee Salary : ",self.emp_salary)
+    def displayEmployeeCount(self):
+        print("Employee Count is : ",Employee.empCount)
+
+emp1 = Employee('Shashank', 1000)  # Specific object
+emp1.displayEmployeeCount()
+emp2 = Employee('Rahul', 2000)  # Specific object
+emp2.displayEmployeeCount()
+
 Q12. Where and how are instance attributes created?
+
+Instance attributes are created when an object is created. Instance attributes are not shared by objects. Every object has its own copy of them. Example:
+
+class Employee:
+    # Class attribute
+    empCount = 0
+    def __init__(self, name, salary):
+        # Instance variables or attributes
+        self.emp_name = name
+        self.emp_salary = salary
+        Employee.empCount += 1 # In order to manipulate a class attribute
+    # Method of the class
+    def displayEmployeeInfo(self):
+        print("Employee Name is : ",self.emp_name," , Employee Salary : ",self.emp_salary)
+    def displayEmployeeCount(self):
+        print("Employee Count is : ",Employee.empCount)
+
+emp1 = Employee('Shashank', 1000)  # Specific object
+emp1.displayEmployeeCount() # This object will have its own attributes which are name and salary
+emp2 = Employee('Rahul', 2000)  # Specific object
+emp2.displayEmployeeCount() # This object will have its own attributes which are name and salary
 
 Q13. What does the term "self" in a Python class mean?
 
+self in python means the instance of the class itself. We can access attributes and methods using self. Example
+
+class Employee:
+    # This is known as the constructor of a class and has its own defined way of declaration __init__
+    # It is mainly used for assignement of instance variables
+    def __init__(self, name, salary):
+        # Instance variables or attributes
+        self.emp_name = name
+        self.emp_salary = salary
+    # Method of the class
+    def displayEmployeeInfo(self):
+        print("Employee Name is : ",self.emp_name," , Employee Salary : ",self.emp_salary)
+
 Q14. How does a Python class handle operator overloading?
+
+Operator Overloading means giving extended meaning beyond their predefined operational meaning. For example operator + is used to add two integers as well as join 
+two strings and merge two lists. It is achievable because ‘+’ operator is overloaded by int class and str class.
 
 Q15. When do you consider allowing operator overloading of your classes?
 
+Whenever we need to work with various data types which can be operarted upon by a single type of operator, it can be considered.
+
 Q16. What is the most popular form of operator overloading?
+
+Most popular would be '+', '*', '>', '<' and '=='
 
 Q17. What are the two most important concepts to grasp in order to comprehend Python OOP code?
 
+Class
+Objects
+Polymorphism
+Encapsulation
+Inheritance
+Data Abstraction
+
 Q18. Describe three applications for exception processing.
+
+ - Can be used for Catching various types of errors and point them out in our programs
+ - Can be used to execute a particular part of the program if there are no errors
+ - Can be used to execute part of code irrespective is there are earlier errors in the program or not
 
 Q19. What happens if you don't do something extra to treat an exception?
 
+If we don't take steps to treat an exception the execution of our program can stop further. It can also be difficult to debug code sometimes.
+
 Q20. What are your options for recovering from an exception in your script?
+
+To recover from an exception we can use the try-except blocks in our program to point out the error when executing. This helps us to reach the cause of the problem
+and resolve it. We can also use and else block to execute codoe if there are no exceptions encountered and the code is clean.
 
 Q21. Describe two methods for triggering exceptions in your script.
 
+2 general methods to trigger exceptions are 
+- Division by 0 error
+- Index out of range error
+
 Q22. Identify two methods for specifying actions to be executed at termination time, regardless of whether or not an exception exists.
 
+- Use the 'finally' block in the program to execute code even if there are errors or not in the program.
+- 
+
 Q23. What is the purpose of the try statement?
+
+try statement can be used to execute a block of code where there may be a chance of exceptions. The code inside the try block only executes completely if there are no
+errors at all.
 
 Q24. What are the two most popular try statement variations?
 
