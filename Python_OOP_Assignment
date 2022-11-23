@@ -235,24 +235,96 @@ errors at all.
 
 Q24. What are the two most popular try statement variations?
 
+The most ppopular try statement variations are using the 'try-except' and 'try-except-else'
+
 Q25. What is the purpose of the raise statement?
+
+We can create exceptions and stop the flow of our program using the raise statement.
 
 Q26. What does the assert statement do, and what other statement is it like?
 
+assert can be used in a program to check if a statement is true or false. It true the execution continues, but if false the executiono stops and throws error.
+
 Q27. What is the purpose of the with/as argument, and what other statement is it like?
+
+'with' statement is used in exception handling to make the code cleaner and much more readable. It helps to ensure that a resource is properly released when the code
+using the resource is executed. It is like the finally statement.
 
 Q28. What are *args, **kwargs?
 
+*args can be used to pass multiple number of arguments in a function. 
+*kwargs can be used to pass multiple key word arguments in a function.
+
 Q29. How can I pass optional or keyword parameters from one function to another?
+
+
 
 Q30. What are Lambda Functions?
 
+Lambda functions are anonymous function means that the function is without a name. Example
+
+lambda_sq = lambda x : x ** 2
+print(lambda_sq(5))
+
 Q31. Explain Inheritance in Python with an example?
 
+In the below example the parent class is Person. The child class called Employee inherits its properties from Person class. Objects created in Employee class will 
+have all the attributes of Person class as well as methods of the Persion class.
+
+# Inheritance in Python
+# Base Class or parent class
+class Person():
+    def __init__(self, name):
+        self.name = name
+    
+    def displayName(self):
+        print(self.name)
+
+    # By default we can say particular person is unemployed
+    def isEmployed(self):
+        print(self.name,' is un-employed !!')
+
+# Derived Class or child class
+class Employee(Person):
+    def isEmployed(self):
+        print(self.name,' is Employed !!')
+    
+emp = Person('Shashank')
+emp.displayName()
+emp.isEmployed()
+
+per = Employee('Rahul')
+per.displayName() # Method inherited from the base class
+per.isEmployed() # Method from derived class will be called not base class
+
 Q32. Suppose class C inherits from classes A and B as class C(A,B).Classes A and B both have their own versions of method func(). If we call func() from an object of class C, which version gets invoked?
+
+The func() of the version present in class C will be inivoked.
 
 Q33. Which methods/functions do we use to determine the type of instance and inheritance?
 
 Q34.Explain the use of the 'nonlocal' keyword in Python.
 
+nonlocal keyword is used in case of nested functions, where the variables are neither global nor local. Example below:
+
+def outer():
+    message = 'outer scope'
+    print(message)
+
+    def inner():
+        nonlocal message
+        message = 'inner scope'
+        print(message)
+    inner()
+    print(message)
+outer()
+
+Output:
+outer scope
+inner scope
+inner scope 
+
 Q35. What is the global keyword?
+
+A global keyword is a keyword that allows a user to modify a variable outside the current scope. It is used to create global variables in Python from a 
+non-global scope, i.e. inside a function. Global keyword is used inside a function only when we want to do assignments or when we want to change a variable
