@@ -116,7 +116,20 @@ Q9. What is the relationship between classes and modules?
 
 Q10. How do you make instances and classes?
 
+- The class statement creates a new class definition. The name of the class immediately follows the keyword class. Example
 
+class Student:
+  ## Constructor and attributes and methods are defined here
+   def __init__(self, name, subject):
+      self.name = name
+      self.subject = subject
+         
+   def displayDetails(self):
+     print("Student Name:", self.name," Subject :",self.subject)
+     
+- To create an instance of the above class we call the class using thee class name and passing the needed arguments defined in the constructor of the class. 
+student1 = Student("John","Maths")
+student2 = Student("Mark","Englosh")
 
 Q11. Where and how should be class attributes created?
 
@@ -257,7 +270,8 @@ Q28. What are *args, **kwargs?
 
 Q29. How can I pass optional or keyword parameters from one function to another?
 
-
+To pass, collect the arguments using the * and ** in the function’s parameter list. Through this, you will get the positional arguments as a tuple and the keyword 
+arguments as a dictionary. Pass these arguments when calling another function by using * and ** 
 
 Q30. What are Lambda Functions?
 
@@ -302,6 +316,8 @@ Q32. Suppose class C inherits from classes A and B as class C(A,B).Classes A and
 The func() of the version present in class C will be inivoked.
 
 Q33. Which methods/functions do we use to determine the type of instance and inheritance?
+
+We can use isinstance() and issubclass() built in fucntions to check this.
 
 Q34.Explain the use of the 'nonlocal' keyword in Python.
 
